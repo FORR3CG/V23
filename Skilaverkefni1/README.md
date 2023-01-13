@@ -5,6 +5,7 @@
 - **Frjálst val er** um að skrifa skýringar við kóðann, að öðru leiti en þar sem liðurinn hér að ofan kallar á, en þú þarft að geta útskýrt hverja línu kóðans nákvæmlega ef beðið er um.
 - **Ekki er heimilt** að nota tilbúnar lausnir fyrir fylkin (t.d. std::vector) og ekki nota `global` breytur.
 - **Það á að nota** `do-while` og `switch-case` við lausn valmyndarinnar.
+- **Sein skil** ef skilað er eftir að skilafrestur er liðinn dragast tveir frá einkunn fyrir hvern byrjaðan sólarhring sem liðinn er frá skilafresti.
 
 ## Verkefnalýsing - Stafarugl
 
