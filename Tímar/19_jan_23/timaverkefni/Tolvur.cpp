@@ -69,3 +69,20 @@ void Tolvur::prentaAllt() {
 Tolvur::~Tolvur() {
     delete [] this->tolvurnar;
 }
+
+Tolvur::Tolvur(Tolvur& hinn) {
+    this->staerd = hinn.staerd;
+    this->tolvurnar = new Tolva[this->staerd];
+    for(int i = 0; i < this->staerd; i++) {
+        this->tolvurnar[i] = hinn.tolvurnar[i];
+    }
+}
+
+Tolvur& Tolvur::operator=(Tolvur& hinn) {
+    this->staerd = hinn.staerd;
+    this->tolvurnar = new Tolva[this->staerd];
+    for(int i = 0; i < this->staerd; i++) {
+        this->tolvurnar[i] = hinn.tolvurnar[i];
+    }
+    return *this;
+}

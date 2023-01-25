@@ -13,6 +13,8 @@ class Tolvur {
     public:
         Tolvur();
         Tolvur(int staerd);
+        Tolvur(Tolvur& hinn); // copy constructor
+        Tolvur& operator=(Tolvur& hinn); // assignment operator
         void skraTolvu(Tolva t);
         void skraTolvu(int id, std::string cpu, int ram, int hdd);
         bool eydaTolvu(int id);
