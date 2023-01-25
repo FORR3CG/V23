@@ -21,4 +21,14 @@ class Bill {
         void setLitur(std::string litur);
         void prenta();
         std::string toString();
+
+        //bool erEins(Bill& hinn);
+        bool operator==(Bill& hinn);
+        bool operator!=(Bill& hinn);
+        bool operator<(Bill& hinn);
+        bool operator>(Bill& hinn);
+        bool operator<=(Bill& hinn);
+        bool operator>=(Bill& hinn);
 };
+
+std::ostream& operator<<(std::ostream& ostr, Bill& b);

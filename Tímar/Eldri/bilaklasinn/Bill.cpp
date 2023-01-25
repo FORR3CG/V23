@@ -52,3 +52,42 @@ std::string Bill::toString() {
     return "ID: " + std::to_string(this->id) + ", tegund: " + this->tegund +
            ", litur: " + this->litur;
 }
+
+bool Bill::operator==(Bill& hinn) {
+    return this->tegund == hinn.getTegund() &&
+           this->litur == hinn.getLitur();
+}
+
+bool Bill::operator!=(Bill& hinn) {
+    return !(*this == hinn);
+}
+
+bool Bill::operator<(Bill& hinn) {
+    if(this->tegund == hinn.getTegund()) {
+        if(this->litur == hinn.getLitur()) {
+            return this->id < hinn.getId();
+        } else {
+            return this->litur < hinn.getLitur();
+        }
+    }
+    return this->tegund < hinn.getTegund();
+}
+
+bool Bill::operator>(Bill& hinn) {
+    return hinn < *this;
+}
+
+bool Bill::operator<=(Bill& hinn) {
+    return !(*this > hinn);
+}
+
+bool Bill::operator>=(Bill& hinn) {
+    return !(*this < hinn);
+}
+
+std::ostream& operator<<(std::ostream& ostr, Bill& b) {
+    // return ostr << b.toString();
+    return ostr << "Id: " << b.getId() << ", tegund: " << b.getTegund()
+                << ", litur: " << b.getLitur();
+}
+
