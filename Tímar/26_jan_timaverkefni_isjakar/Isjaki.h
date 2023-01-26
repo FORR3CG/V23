@@ -19,6 +19,15 @@ class Isjaki {
         float getFjarlaegd();
         void setFjarlaegd(int fjarlaegd);
 
-        
+        void prenta();
+        std::string toString();
 
+        bool operator==(Isjaki& hinn);
+        bool operator!=(Isjaki& hinn);
+        bool operator<(Isjaki& hinn);
+        bool operator>(Isjaki& hinn);
+        bool operator<=(Isjaki& hinn);
+        bool operator>=(Isjaki& hinn);
 };
+
+std::ostream& operator<<(std::ostream& ostr, Isjaki& hinn);
