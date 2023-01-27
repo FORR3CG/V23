@@ -11,5 +11,7 @@ int main() {
     Isjaki i1 = Isjaki(20, 30, 40);
     Isjaki i2 = Isjaki(20, 30, 40);
     if(i1 == i2) cout << "eins\n";
+
+    listi.prentaAllt();
     return 0;
 }
