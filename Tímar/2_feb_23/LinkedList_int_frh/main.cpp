@@ -43,6 +43,31 @@ class LinkedList {
             }
         }
 
+        void setjaRadad(int data) {
+            Node* ny_gogn = new Node(data);
+            if(!this->head) {
+                this->head = ny_gogn;
+            } else {
+                if(this->head->data > data) {
+                    ny_gogn->next = this->head;
+                    this->head = ny_gogn;
+                } else {
+                    Node* current = this->head;
+                    Node* prev = this->head;
+                    while(current && current->data <= data) {
+                        prev = current;
+                        current = current->next;
+                    }
+                    if(current) {
+                        ny_gogn->next = current;
+                        prev->next = ny_gogn;
+                    } else {
+                        prev->next = ny_gogn;
+                    }
+                }
+            }
+        }
+
         int saekjaFremsta() {
             if(this->head == nullptr) {
                 return -1;
@@ -104,6 +129,17 @@ class LinkedList {
             }
         }
 
+        void prentaEinn(int id) {
+            Node* current = this->head;
+            while(current) {
+                if(current->data == id) {
+                    cout << current->data << endl;
+                    return;
+                }
+                current = current ->next;
+            }
+        }
+
         void prenta() {
             Node* current = this->head;
             while(current != nullptr) {
@@ -124,13 +160,12 @@ class LinkedList {
 
 int main() {
     LinkedList listi;
-    listi.setjaAftast(10);
-    listi.setjaAftast(20);
-    listi.setjaAftast(30);
-    listi.setjaAftast(40);
-    listi.setjaAftast(50);
-    listi.saekjaNoduMedGognumNr(99);
-    listi.saekjaNoduMedGognumNr(40);
+    listi.setjaRadad(50);
+    listi.setjaRadad(30);
+    listi.setjaRadad(10);
+    listi.setjaRadad(40);
+    listi.setjaRadad(20);
+    
     listi.prenta();
 
     return 0;
