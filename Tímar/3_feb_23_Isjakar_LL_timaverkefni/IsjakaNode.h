@@ -3,7 +3,7 @@
 #include "Isjaki.h"
 
 struct IsjakaNode {
-    Isjaki jaki;
+    Isjaki jaki; // data
     IsjakaNode* next;
 
     IsjakaNode(Isjaki jaki) {
