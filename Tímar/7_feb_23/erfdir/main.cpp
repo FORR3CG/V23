@@ -23,11 +23,11 @@ class Dyr {
         string toString() { 
             return "aldur: " + to_string(this->aldur) + ", nafn: " + this->nafn;
         }
-        void prenta() {
+        virtual void prenta() {
             cout << "Dýr, nafn: " << this->nafn << ", aldur: " 
                  << this->aldur << endl;
         }
-        ~Dyr() { }
+        virtual ~Dyr() {}
 };
 
 class Hundur : public Dyr { // aðgangsstýring segir til um aðgengi public
@@ -64,12 +64,59 @@ class Kottur : public Dyr {
         }
 };
 
+class Dyragardur {
+    private:
+        Dyr** listinn;
+        int staerd;
+        int finnaLausanIndex() {
+            for(int i = 0; i < this->staerd; i++) {
+                if(this->listinn[i] == nullptr) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+    public:
+        Dyragardur() {
+            this->staerd = 2;
+            this->listinn = new Dyr*[this->staerd]();
+        }
+        void skraHund(string nafn, int aldur, int einkunn) {
+            // TODO
+        }
+        void skraKott(string nafn, int aldur, string eigandi) {
+            // TODO
+        }
+        void skraDyr(string nafn, int aldur) {
+            // TODO
+        }
+        void skraDyr(Dyr* nytt_dyr) {
+            // TODO
+        }
+};
+
+
 int main() {
-    Hundur snati;
-    snati.prenta();
-    Kottur grettir;
-    grettir.prenta();
-    Dyr d;
-    d.prenta();
+    Dyragardur dg;
+    Dyr** f2 = new Dyr*[5];
+    for(int i = 0; i < 5; i++) {
+        cout << f2[i] << endl;
+    }
+    
+    //Dyr fylkid[3];
+    Dyr** fylkid = new Dyr*[3];
+    fylkid[0] = new Hundur(); //snati;
+    fylkid[1] = new Kottur();
+    fylkid[2] = new Dyr();
+    
+    for(int i = 0; i < 3; i++) {
+        fylkid[i]->prenta();
+    }
+
+    for(int i = 0; i < 3; i++) {
+        delete fylkid[i];
+    }
+    delete [] fylkid;
+
     return 0;
 }
