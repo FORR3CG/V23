@@ -106,9 +106,47 @@ class Dyragardur {
                 this->staerd += 2;
             }
         }
+
+        void eydaDyri(string nafn) {
+            for(int i = 0; i < this->staerd; i++) {
+                if(this->listinn[i] && this->listinn[i]->getNafn() == nafn) {
+                    delete this->listinn[i];
+                    this->listinn[i] = nullptr;
+                    return;
+                }
+            }
+        }
+
+        void breytaAldri(string nafn, int nyr_aldur) {
+            for(int i = 0; i < this->staerd; i++) {
+                if(this->listinn[i] && this->listinn[i]->getNafn() == nafn) {
+                    this->listinn[i]->setAldur(nyr_aldur);
+                    return;
+                }
+            }
+        }
+
+        void prentaEittDyr(string nafn) {
+            for(int i = 0; i < this->staerd; i++) {
+                if(this->listinn[i] && this->listinn[i]->getNafn() == nafn) {
+                    this->listinn[i]->prenta();
+                    return;
+                }
+            }
+        }
+
+        void prentaAllt() {
+            for(int i = 0; i < this->staerd; i++) {
+                if(this->listinn[i]) {
+                    this->listinn[i]->prenta();
+                }
+            }
+        }
+
         ~Dyragardur() {
             for(int i = 0; i < this->staerd; i++) {
-                delete this->listinn[i];
+                if(this->listinn[i]) // if(this->listinn[i] != nullptr)
+                    delete this->listinn[i];
             }
             delete [] this->listinn;
         }
@@ -117,25 +155,7 @@ class Dyragardur {
 
 int main() {
     Dyragardur dg;
-    Dyr** f2 = new Dyr*[5]();
-    for(int i = 0; i < 5; i++) {
-        cout << f2[i] << endl;
-    }
-    
-    //Dyr fylkid[3];
-    Dyr** fylkid = new Dyr*[3];
-    fylkid[0] = new Hundur(); //snati;
-    fylkid[1] = new Kottur();
-    fylkid[2] = new Dyr();
-    
-    for(int i = 0; i < 3; i++) {
-        fylkid[i]->prenta();
-    }
-
-    for(int i = 0; i < 3; i++) {
-        delete fylkid[i];
-    }
-    delete [] fylkid;
+    dg.skraHund("Snati", 5, 5);
 
     return 0;
 }
