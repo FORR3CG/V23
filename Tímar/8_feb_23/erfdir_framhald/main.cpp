@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib> // <stdlib.h>
+#include <ctime>
 
 using namespace std;
 
@@ -78,7 +80,7 @@ class Dyragardur {
         }
     public:
         Dyragardur() {
-            this->staerd = 2;
+            this->staerd = 100010;
             this->listinn = new Dyr*[this->staerd]();
         }
         void skraHund(string nafn, int aldur, int einkunn) {
@@ -96,14 +98,14 @@ class Dyragardur {
             if(idx != -1) {
                 this->listinn[idx] = nytt_dyr;
             } else {
-                Dyr** temp = new Dyr*[this->staerd + 2]();
+                Dyr** temp = new Dyr*[this->staerd * 2]();
                 for(int i = 0; i < this->staerd; i++) {
                     temp[i] = this->listinn[i];
                 }
                 delete [] this->listinn;
                 this->listinn = temp;
                 this->listinn[this->staerd] = nytt_dyr;
-                this->staerd += 2;
+                this->staerd *= 2;
             }
         }
 
@@ -154,8 +156,15 @@ class Dyragardur {
 
 
 int main() {
+    srand(time(0));
+    string nofn[] = {"Snati", "Grettir", "Fluffy", "Kekkur", "Pjakkur", "Lassý", "Vaskur", "Lotta", "Lína", "Leó", "Brandur"};
+    int nafnafjoldi = 11;
     Dyragardur dg;
     dg.skraHund("Snati", 5, 5);
-
+    for(int i = 0; i < 5000; i++) {
+        dg.skraHund(nofn[rand() % nafnafjoldi], rand() % 15, rand() % 10);
+        dg.skraKott(nofn[rand() % nafnafjoldi], rand() % 15, "Jón");
+    }
+    cout << "Búið!!\n";
     return 0;
 }
