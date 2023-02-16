@@ -22,5 +22,5 @@ void Hundur::prenta() {
 }
 std::string Hundur::getType() {
     // TODO:
-    return "";
+    return "hundur";
 }

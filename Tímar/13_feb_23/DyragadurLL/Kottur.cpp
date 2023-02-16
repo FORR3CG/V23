@@ -23,5 +23,5 @@ void Kottur::prenta() {
 
 std::string Kottur::getType() {
     // TODO
-    return "";
+    return "köttur";
 }

@@ -31,5 +31,5 @@ void Dyr::prenta() { // athuga ekkert virtual hér, bara í .h skránni
 
 std::string Dyr::getType() { 
     // TODO, fallið skilar af hvaða tagi dýrið er
-    return "";
+    return "dýr";
 }
