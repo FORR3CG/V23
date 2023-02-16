@@ -17,4 +17,9 @@ class Dyr {
         virtual void prenta();
         virtual std::string getType();
         virtual ~Dyr() {}
+
+        bool operator<(Dyr& hitt);
+        bool operator>(Dyr& hitt);
+        bool operator<=(Dyr& hitt);
+        bool operator>=(Dyr& hitt);
 };

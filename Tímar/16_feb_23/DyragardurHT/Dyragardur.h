@@ -10,9 +10,10 @@
 
 class Dyragardur {
     private:
-        DyraNode** head;
-    public:
+        DyraNode** heads;
+        int staerd;
         int hash(std::string nafn);
+    public:
         Dyragardur();
         Dyragardur(int staerd);
         Dyragardur(Dyragardur& hinn);
@@ -21,7 +22,7 @@ class Dyragardur {
         void skraHund(int aldur, std::string nafn, int einkunn);
         void skraKott(int aldur, std::string nafn, std::string eigandi);
         bool eydaDyri(std::string nafn);
-        void skodaDyr(std::string nafn);
+        bool skodaDyr(std::string nafn);
         void prentaAllt();
         void prentaHunda();
         void prentaKetti();

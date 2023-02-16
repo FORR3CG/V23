@@ -33,3 +33,19 @@ std::string Dyr::getType() {
     // TODO, fallið skilar af hvaða tagi dýrið er
     return "dýr";
 }
+
+bool Dyr::operator<(Dyr& hitt) {
+    return this->nafn < hitt.nafn;
+}
+
+bool Dyr::operator>(Dyr& hitt) {
+    return hitt < *this;
+}
+
+bool Dyr::operator<=(Dyr& hitt) {
+    return !(*this > hitt);
+}
+
+bool Dyr::operator>=(Dyr& hitt) {
+    return !(*this < hitt);
+}
