@@ -104,7 +104,7 @@ Listaklasinn:
 
 Hafið þessi gögn harðkóðuð í forritinu sem þið skilið.
 
-Ferð | Nr. | Staðsetnign | Verðmæti | Pláss/Snúningur/Lumens/Kaupár
+Búnaður | Nr. | Staðsetnign | Verðmæti | Pláss/Snúningur/Lumens/Kaupár
 --- | --- | :-: | :-: | ---
 Borð | 501 | 21209 | 1000 | 4
 Borð | 502 | 10410 | 2000 | 2
