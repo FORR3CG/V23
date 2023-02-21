@@ -27,7 +27,7 @@ Halda skal utan um verkefnið á github. Þar á að vera allur kóði ásamt da
 
 :warning: Ekki er gefin sérstök einkunn fyrir skýrsluna og það sem á að vera í henni en vanti eitthvað af því sem á að vera í skýrslunni eða það ekki vel unnið kemur það til mikillar lækkunar á einkunn verkefnisins.
 
-Sniðmát fyrir skýrsluna má finna [hér](./skyrsluform.md).
+Sniðmát fyrir skýrsluna má finna [hér](./snidmat.md).
 
 ### Námsmat
 
