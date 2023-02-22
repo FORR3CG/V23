@@ -83,9 +83,9 @@ Listaklasinn:
   - Tætitafla (e. hash table, hash map, dictionary), gefur 20 aukastig ofan á grunnkröfur.
 - Gerðu notendaviðmót þar sem hægt er að gera eftirfarandi:
   - Það þarf að vera hægt að skrá búnað í listann.
-  - Það þarf að vera hægt að sækja búnað úr listanum (án þess að eyða búnaði).
   - Það þarf að vera hægt að eyða búnaði úr listanum.
   - Það þarf að vera hægt að uppfæra staðsetningu búnaðar.
+  - Það þarf að vera hægt að prenta út ákveðinn búnað útfrá id.
   - það þarf að vera hægt að prenta á skjá lista með öllum búnaði.
   - það þarf að vera hægt að prenta á skjá lista með öllum búnaði í ákveðnu húsi.
   - Hafðu notendaviðmótið sem svipuðu sniði og [hér](https://gist.github.com/gestskoli/b407cf29d8d3852e0fc0146aead12e61).
